@@ -4,10 +4,6 @@
     "target_path": "device/sony/msm8960-common"
   },
   {
-    "repository": "android_vendor_sony_qcom-common",
-    "target_path": "vendor/sony/qcom-common"
-  },
-  {
     "repository": "android_kernel_sony_msm8x60",
     "target_path": "kernel/sony/msm8x60"
   },
