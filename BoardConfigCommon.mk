@@ -86,7 +86,7 @@ BLUETOOTH_HCI_USE_MCT := true
 BOARD_HAS_RIL_LEGACY_PAP := true
 
 # Needed for blobs
-COMMON_GLOBAL_CFLAGS += -DNEEDS_VECTORIMPL_SYMBOLS
+TARGET_RELEASE_CPPFLAGS += -DNEEDS_VECTORIMPL_SYMBOLS
 
 # Vold
 TARGET_USE_CUSTOM_LUN_FILE_PATH := /sys/devices/platform/msm_hsusb/gadget/lun%d/file
@@ -150,11 +150,13 @@ BOARD_SEPOLICY_UNION += \
     mediaserver.te \
     mpdecision.te \
     netmgrd.te \
+    property.te \
+    property_contexts \
     qmux.te \
     rild.te \
     rmt.te \
     surfaceflinger.te \
-    system.te \
+    system_server.te \
     tee.te \
     thermald.te \
     ueventd.te \
