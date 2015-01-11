@@ -50,8 +50,14 @@ BOARD_KERNEL_PAGESIZE := 2048
 SONY_FORCE_RAMDISK_ADDRESS := 0x81900000
 BOARD_MKBOOTIMG_ARGS := --ramdisk_offset 0x01700000
 
-# Temporary fix for Adreno's INVAL
+# Ueventd
+COMMON_GLOBAL_CFLAGS += -DQCOM_LEGACY_UIDS
+
+# Use legacy MMAP for pre-lollipop blobs
 BOARD_USES_LEGACY_MMAP := true
+
+# Use dlmalloc instead of jemalloc for mallocs
+MALLOC_IMPL := dlmalloc
 
 # Time
 BOARD_USES_QC_TIME_SERVICES := true
@@ -130,40 +136,30 @@ TARGET_FUSE_SDCARD_GID := 2800
 # Include an expanded selection of fonts
 EXTENDED_FONT_FOOTPRINT := true
 
-# SELinux
+# Include common SE policies
+-include device/qcom/sepolicy/sepolicy.mk
+
 BOARD_SEPOLICY_DIRS += \
     device/sony/blue-common/sepolicy
 
 BOARD_SEPOLICY_UNION += \
     file_contexts \
-    property_contexts \
-    te_macros \
-    bluetooth_loader.te \
-    bridge.te \
-    camera.te \
-    device.te \
-    dhcp.te \
-    domain.te \
-    drmserver.te \
-    file.te \
-    kickstart.te \
+    bootanim.te \
+    illumination.te \
     init.te \
     mac_update.te \
     mediaserver.te \
-    mpdecision.te \
-    netmgrd.te \
-    property.te \
-    property_contexts \
-    qmux.te \
-    rild.te \
-    rmt.te \
+    platform_app.te \
+    rmt_storage.te \
+    secchand.te \
+    setup_fs.te \
     surfaceflinger.te \
+    system_app.te \
+    system_monitor.te \
     system_server.te \
-    tee.te \
-    thermald.te \
-    ueventd.te \
-    vold.te \
-    wpa_supplicant.te
+    tad_static.te \
+    ta_qmi_service.te \
+    updatemiscta.te
 
 # inherit from the proprietary version
 -include vendor/sony/blue-common/BoardConfigVendor.mk
