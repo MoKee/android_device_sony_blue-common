@@ -50,9 +50,6 @@ BOARD_KERNEL_PAGESIZE := 2048
 SONY_FORCE_RAMDISK_ADDRESS := 0x81900000
 BOARD_MKBOOTIMG_ARGS := --ramdisk_offset 0x01700000
 
-# Ueventd
-COMMON_GLOBAL_CFLAGS += -DQCOM_LEGACY_UIDS
-
 # Use legacy MMAP for pre-lollipop blobs
 BOARD_USES_LEGACY_MMAP := true
 
@@ -144,12 +141,14 @@ BOARD_SEPOLICY_DIRS += \
 
 BOARD_SEPOLICY_UNION += \
     file_contexts \
+    property_contexts \
     bootanim.te \
     illumination.te \
     init.te \
     mac_update.te \
     mediaserver.te \
     platform_app.te \
+    property.te \
     rmt_storage.te \
     secchand.te \
     setup_fs.te \
