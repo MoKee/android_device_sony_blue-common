@@ -17,6 +17,7 @@
 #
 
 if [ -f z2/system/bin/fix_storage_permissions.sh ];then
+	mkdirp out/system/bin 2> /dev/null
 	cp z2/system/bin/fix_storage_permissions.sh out/system/bin/fix_storage_permissions.sh
 	rm z2/system/bin/fix_storage_permissions.sh
 fi
