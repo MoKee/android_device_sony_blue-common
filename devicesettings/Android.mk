@@ -17,7 +17,7 @@ LOCAL_STATIC_JAVA_LIBRARIES := \
 
 ifeq ($(BOARD_AOSP_BASED),)
     LOCAL_STATIC_JAVA_LIBRARIES += \
-        org.cyanogenmod.platform.sdk
+        org.mokee.platform.sdk
 endif
 
 LOCAL_PROGUARD_FLAG_FILES := proguard.flags

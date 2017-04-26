@@ -2,7 +2,7 @@
   *;
 }
 
--keep class cyanogenmod.providers.CMSettings$System {
+-keep class mokee.providers.MKSettings$System {
     public static final java.lang.String TOUCHSCREEN_GESTURE_HAPTIC_FEEDBACK;
 }
 

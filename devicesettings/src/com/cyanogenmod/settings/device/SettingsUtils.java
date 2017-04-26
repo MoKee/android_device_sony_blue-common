@@ -30,7 +30,7 @@ public class SettingsUtils {
     public static final String TAG = "SettingsUtils";
 
     public static final String PREFERENCES = "SettingsUtilsPreferences";
-    public static final String SETTINGS_CLASS = "cyanogenmod.providers.CMSettings$System";
+    public static final String SETTINGS_CLASS = "mokee.providers.MKSettings$System";
 
     public static final String HIGH_TOUCH_SENSITIVITY_ENABLE =
             "HIGH_TOUCH_SENSITIVITY_ENABLE";
@@ -47,7 +47,7 @@ public class SettingsUtils {
             String sdkName = (String)systemSettings.getDeclaredField(name).get(null);
             ret = (int)getInt.invoke(systemSettings, cr, sdkName, def);
         } catch (Exception e) {
-            Log.i(TAG, "CMSettings not found. Using application settings for getInt");
+            Log.i(TAG, "MKSettings not found. Using application settings for getInt");
             SharedPreferences settings = context.getSharedPreferences(PREFERENCES, 0);
             ret = settings.getInt(name, def);
         }
@@ -65,7 +65,7 @@ public class SettingsUtils {
             String sdkName = (String)systemSettings.getDeclaredField(name).get(null);
             ret = (boolean)putInt.invoke(systemSettings, cr, sdkName, value);
         } catch (Exception e) {
-            Log.i(TAG, "CMSettings not found. Using application settings for putInt");
+            Log.i(TAG, "MKSettings not found. Using application settings for putInt");
             SharedPreferences settings = context.getSharedPreferences(PREFERENCES, 0);
             SharedPreferences.Editor editor = settings.edit();
             editor.putInt(name, value);

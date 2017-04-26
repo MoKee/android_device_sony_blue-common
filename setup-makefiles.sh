@@ -35,7 +35,7 @@ if [[ ! -d "$MY_DIR" ]]; then MY_DIR="$PWD"; fi
 
 ROM_ROOT="$MY_DIR"/../../..
 
-HELPER="$ROM_ROOT"/vendor/cm/build/tools/extract_utils.sh
+HELPER="$ROM_ROOT"/vendor/mk/build/tools/extract_utils.sh
 if [ ! -f "$HELPER" ]; then
     echo "Unable to find helper script at $HELPER"
     exit 1
