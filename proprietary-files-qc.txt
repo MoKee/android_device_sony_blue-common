@@ -72,7 +72,6 @@ lib/libmmjpeg.so
 lib/libmercury.so
 
 # Perf
-bin/mpdecision
 lib/libthermalclient.so
 vendor/lib/libqti-perfd-client.so
 
@@ -99,13 +98,9 @@ vendor/lib/libqmi_encdec.so
 bin/rmt_storage
 
 # Security
-bin/qseecomd
 bin/secchand
 lib/lib_asb_tee.so
 lib/libQSEEComAPI.so
-lib/libdrmdiag.so
-lib/libdrmfs.so
-lib/libdrmtime.so
 lib/libidd.so
 lib/libkeyctrl.so
 lib/libpin-cache.so
@@ -127,13 +122,7 @@ etc/firmware/vidc_1080p.fw
 etc/firmware/vidcfw.elf
 
 # Widevine DRM
-framework/com.google.widevine.software.drm.jar
-vendor/lib/drm/libdrmwvmplugin.so
 vendor/lib/mediadrm/libwvdrmengine.so
-vendor/lib/libdrmdecrypt.so
-vendor/lib/libwvdrm_L3.so
-vendor/lib/libwvm.so
-vendor/lib/libWVStreamControlAPI_L3.so
 
 # WiFi Firmware
 etc/firmware/wcnss.b00
