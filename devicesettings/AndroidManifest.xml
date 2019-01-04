@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="org.lineageos.settings.device"
+    package="org.mokee.settings.device"
     android:versionCode="3"
     android:versionName="3.0"
     android:sharedUserId="android.uid.system">
@@ -21,18 +21,18 @@
         android:label="@string/device_settings_app_name"
         android:persistent="true">
 
-        <receiver android:name="org.lineageos.settings.device.BootCompletedReceiver">
+        <receiver android:name="org.mokee.settings.device.BootCompletedReceiver">
             <intent-filter>
                 <action android:name="android.intent.action.BOOT_COMPLETED" />
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </receiver>
 
-        <service android:name="org.lineageos.settings.device.GloveModeService"
+        <service android:name="org.mokee.settings.device.GloveModeService"
                  android:permission="GloveModeService">
         </service>
 
-        <service android:name="org.lineageos.settings.device.SensorsDozeService"
+        <service android:name="org.mokee.settings.device.SensorsDozeService"
                  android:permission="SensorsDozeService">
         </service>
 
